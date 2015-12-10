@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:annotation-config/>
+
+
+    <bean name="a9x" class="org.sopt.spring.injection.chipset.impl.A9X"/>
+    <bean name="exynos" class="org.sopt.spring.injection.chipset.impl.Exynos"/>
+    <bean name="apq8084" class="org.sopt.spring.injection.chipset.impl.APQ8084"/>
+    <bean name="silvermont" class="org.sopt.spring.injection.chipset.impl.Silvermont"/>
+
+
+    <bean name="iPhone"
+          class="org.sopt.spring.injection.phone.impl.iPhone">
+
+        <property name="cpu" ref="a9x"/>
+
+    </bean>
+
+    <bean name="galaxy"
+          class="org.sopt.spring.injection.phone.impl.Galaxy">
+
+        <property name="cpu" ref="exynos"/>
+
+    </bean>
+
+    <bean name="mi" class="org.sopt.spring.injection.phone.impl.Mi"/>
+    <bean name="prototype" class="org.sopt.spring.injection.phone.impl.Prototype"/>
+
+
+</beans>
